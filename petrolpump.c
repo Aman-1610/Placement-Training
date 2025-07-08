@@ -1,29 +1,25 @@
 #include <stdio.h>
-#include <dos.h>      // for delay()
-#include <stdlib.h>   // for system("cls")
+#include <dos.h>     
+#include <stdlib.h>  
 
 int main() 
 {
-    float petrolPrice = 106.49; // Rs/litre
+    float petrolPrice = 106.49; 
     float enteredAmount;
     float currentAmount = 0.0;
     float fuelFilled = 0.0;
 
-    printf("=====================================\n");
-    printf("       Welcome to Petrol Pump        \n");
-    printf("=====================================\n");
-    printf("Petrol Price: %.2f Rs/litre\n", petrolPrice);
     printf("Enter amount you want to fill (in Rs): ");
     scanf("%f", &enteredAmount);
 
     printf("\nFilling Started...\n");
-    delay(1000);  // 1 second delay
+    delay(1000);  
 
     while (currentAmount < enteredAmount) 
     {
-        system("cls");  // Clear screen
+        system("cls");  
 
-        currentAmount += 1.0;  // increment amount by Rs.1
+        currentAmount += 1.0;  
         fuelFilled = currentAmount / petrolPrice;
 
         if (currentAmount > enteredAmount) 
@@ -32,13 +28,10 @@ int main()
             fuelFilled = currentAmount / petrolPrice;
         }
 
-        printf("=====================================\n");
-        printf("        Filling Petrol...\n");
         printf("Amount: Rs %.2f\n", currentAmount);
         printf("Litres: %.2f L\n", fuelFilled);
-        printf("=====================================\n");
-
-        delay(50);  // 50 milliseconds delay
+        
+        delay(50);  
     }
 
     printf("\nFilling Complete. Please take your bill.\n");

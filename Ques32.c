@@ -9,8 +9,7 @@ int main()
     printf("Enter third number: ");
     scanf("%d",&c);
     int max=(a>b)?a:b;
-    max=(b>c)?b:c;
-    max=(c>a)?c:a;
+    max=(max>c)?max:c;
     printf("max value: %d",max);
     return 0;
 }
